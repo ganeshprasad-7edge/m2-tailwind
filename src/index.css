@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-poppins: "Poppins", sans-serif; 
+  --color-jobView: #F2EFFF;
+  --color-jobApplied: #5832E6;
+  --color-searchbar: #F6F6F6;
+  --color-searchbarText: #A7A7A7;
+  --color-bgdark: #A7A7A7;
+  --color-jobViewDark: #2D2D2D;
+}

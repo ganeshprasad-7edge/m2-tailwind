@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-2</title>
+    <link rel="stylesheet" href="src/index.css">
+</head>
+
+<body class="font-poppins text-black bg-white dark:bg-black dark:text-white">
+    <header
+        class="flex items-center p-4 bg-white dark:bg-black space-x-16 border-gray-200 dark:border-bgdark border-b-1 pr-6 sticky top-0 z-50 w-full">
+        <div>
+            <img id="logo" src="public/main-logo.png" alt="Circle Soft">
+        </div>
+        <div class="relative flex items-center flex-1 mx-4">
+            <input type="text" placeholder="Search..."
+                class="w-7/12 pl-8 pr-4 py-2 bg-searchbar border-0 rounded-lg focus:outline-none placeholder-searchbarText text-black dark:bg-gray-600 dark:text-white dark:placeholder-white">
+            <svg class="absolute left-3 w-5 h-8 text-gray-500 dark:text-white " xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+        </div>
+        <div class="flex items-center justify-between space-x-8">
+            <div id="darkModeToggle"
+                class="cursor-pointer hover:bg-gray-200  p-2 rounded-lg transition-colors">
+                <img id="toggleLogo" class="bg-gray-100 dark:bg-gray-700  rounded-lg dark:w-8" src="public/moon.png" alt="Toggle Dark Mode">
+            </div>
+            <div>
+                <img id="notificationIcon" src="public/notification.png" alt="Notification" class="mr-4 dark:text-white dark:w-10">
+            </div>
+        </div>
+    </header>
+    <div class="flex">
+        <nav class="w-56 p-4 min-h-screen rounded-lg">
+            <div class="flex items-center mb-6">
+                <img class="rounded-full" src="public/Employee Image.png" alt="">
+                <div class="ml-3">
+                    <h2 class="text-lg font-semibold mt-1">John Doe</h2>
+                    <p class="text-gray-500 text-xs">Admin</p>
+                </div>
+                <svg class="w-6 bg-gray-200 rounded-lg ml-6 dark:text-white dark:bg-bgdark" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+            </div>
+
+            <ul class="space-y-8 ">
+                <li
+                    class="text-black hover:text-jobApplied hover:border-jobApplied hover:border-l-4 py-2 px-4 rounded hover:bg-gray-200 dark:bg-black dark:text-white dark:hover:bg-gray-700">
+                    <svg class="w-5 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+                    </svg>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li class="text-black hover:text-jobApplied hover:border-jobApplied hover:border-l-4 py-2 px-4 rounded hover:bg-gray-200 dark:bg-black dark:text-white dark:hover:bg-gray-700">
+                    <svg class="w-5 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z" />
+                    </svg>
+
+                    <a href="#">Finance</a>
+                </li>
+                <li class="text-black hover:text-jobApplied hover:border-jobApplied hover:border-l-4 py-2 px-4 rounded hover:bg-gray-200 dark:bg-black dark:text-white dark:hover:bg-gray-700">
+                    <svg class="w-5 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Zm6-10.125a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0Zm1.294 6.336a6.721 6.721 0 0 1-3.17.789 6.721 6.721 0 0 1-3.168-.789 3.376 3.376 0 0 1 6.338 0Z" />
+                    </svg>
+
+                    <a href="#">Employee</a>
+                </li>
+                <li class="text-black hover:text-jobApplied hover:border-jobApplied hover:border-l-4 py-2 px-4 rounded hover:bg-gray-200 dark:bg-black dark:text-white dark:hover:bg-gray-700">
+                    <svg class="w-5 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
+                    </svg>
+                    <a href="#">Company</a>
+                </li>
+                <li class="text-black hover:text-jobApplied hover:border-jobApplied hover:border-l-4 py-2 px-4 rounded hover:bg-gray-200 dark:bg-black dark:text-white dark:hover:bg-gray-700">
+                    <svg class="w-5 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                    <a href="#">Candidate</a>
+                </li>
+                <li class="text-black hover:text-jobApplied hover:border-jobApplied hover:border-l-4 py-2 px-4 rounded hover:bg-gray-200 dark:bg-black dark:text-white dark:hover:bg-gray-700">
+                    <svg class="w-5 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                    </svg>
+                    <a href="#">Calander</a>
+                </li>
+            </ul>
+
+            <ul class="space-y-8 mt-5 border-t border-gray-200 pt-4 dark:border-gray-700">
+                <li class="text-black hover:text-jobApplied hover:border-jobApplied hover:border-l-4 py-2 px-4 rounded hover:bg-gray-200 dark:bg-black dark:text-white dark:hover:bg-gray-700">
+                    <svg class="w-5 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                    </svg>
+                    <a href="#">Profile</a>
+                </li>
+                <li class="text-black hover:text-jobApplied hover:border-jobApplied hover:border-l-4 py-2 px-4 rounded hover:bg-gray-200 dark:bg-black dark:text-white dark:hover:bg-gray-700">
+                    <svg class="w-5 inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                    <a href="#">Setting</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="flex-1 p-4 bg-gray-100 dark:bg-gray-600">
+            <!-- Main content area -->
+            <div class="mt-5 ml-5 mr-5">
+                <!-- Top cards-->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white dark:bg-black pt-4 pl-6 pb-4">
+                        <div>
+                            <h3 class="inline-block">Total Employees</h3>
+                            <img class="inline-block ml-2" src="public/Total Employees Card Trend.png" alt="">
+                        </div>
+                        <h5 class="text-4xl">856</h5>
+                        <p class="text-sm text-gray-500">Employee</p>
+                    </div>
+                    <div class="bg-white dark:bg-black pt-4 pl-6 pb-4">
+                        <div>
+                            <h3 class="inline-block">Job View</h3>
+                            <img class="inline-block ml-2" src="public/Job View Card Trend.png" alt="">
+                        </div>
+                        <h5 class="text-4xl">3,342</h5>
+                        <p class="text-sm text-gray-500">Viewers</p>
+                    </div>
+                    <div class="bg-white dark:bg-black pt-4 pl-6 pb-4">
+                        <div>
+                            <h3 class="inline-block">Job Applied</h3>
+                            <img class="inline-block ml-2" src="public/Job Applied Card Trend.png" alt="">
+                        </div>
+                        <h5 class="text-4xl">77</h5>
+                        <p class="text-sm text-gray-500">Applicants</p>
+                    </div>
+                    <div class="bg-white dark:bg-black pt-4 pl-6 pb-4">
+                        <div>
+                            <h3 class="inline-block">Resigned Employees</h3>
+                            <img class="inline-block ml-2" src="public/Resigned Employees Card Trend.png" alt="">
+                        </div>
+                        <h5 class="text-4xl">17</h5>
+                        <p class="text-sm text-gray-500">Employee</p>
+                    </div>
+                </div>
+                <!--Job Statistics-->
+                <div class="bg-white dark:bg-black">
+                    <div class="flex justify-between items-start mt-6 pt-6 px-6">
+                        <h2 class="text-2xl font-semibold">Job Statistics</h2>
+                        <div class="flex items-center space-x-4">
+                            <div class="flex items-center">
+                                <div class="bg-jobView dark:bg-jobViewDark rounded-md w-4 h-4 mr-2"></div>
+                                <div>Job View</div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-jobApplied rounded-md w-4 h-4 mr-2"></div>
+                                <div>Job Applied</div>
+                            </div>
+                            <div class="flex items-center bg-gray-200 dark:bg-gray-700 text-sm rounded-md px-2 py-1">
+                                <div class="text-jobApplied font-semibold">This Month</div>
+                                <svg class="w-4 ml-1 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex p-6">
+                        <!-- Y-axis numbers -->
+                        <div class="flex flex-col justify-between h-64 pr-4 text-sm text-gray-500 dark:text-white">
+                            <div>100</div>
+                            <div>80</div>
+                            <div>60</div>
+                            <div>40</div>
+                            <div>20</div>
+                        </div>
+                        <!-- Chart area -->
+                        <div class="flex-1 relative">
+                            <!-- Horizontal dotted lines -->
+                            <div class="absolute inset-0 h-64">
+                                <div class="absolute top-0 border-t border-dotted border-gray-300 w-full"></div>
+                                <div class="absolute border-t border-dotted border-gray-300 w-full" style="top: 25%;">
+                                </div>
+                                <div class="absolute border-t border-dotted border-gray-300 w-full" style="top: 50%;">
+                                </div>
+                                <div class="absolute border-t border-dotted border-gray-300 w-full" style="top: 75%;">
+                                </div>
+                                <div class="absolute bottom-0 border-t border-dotted border-gray-300 w-full"></div>
+                            </div>
+                            <!-- Chart bars -->
+                            <div class="flex items-end justify-between h-64 border-b border-gray-300 relative z-10">
+                                <!-- January -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16 h-40">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full h-10 rounded-lg"></div>
+                                        <div class="bg-jobApplied w-full h-full rounded-t-none rounded-b-lg"></div>
+                                    </div>
+                                </div>
+                                <!-- February -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 140px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 60px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 80px;"></div>
+                                    </div>
+                                </div>
+                                <!-- March -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 150px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 50px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 100px;"></div>
+                                    </div>
+                                </div>
+                                <!-- April -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 180px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 70px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 110px;"></div>
+                                    </div>
+                                </div>
+                                <!-- May -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 170px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 85px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 85px;"></div>
+                                    </div>
+                                </div>
+                                <!-- June -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 190px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 95px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 95px;"></div>
+                                    </div>
+                                </div>
+                                <!-- July -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 175px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 75px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 100px;"></div>
+                                    </div>
+                                </div>
+                                <!-- August -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 160px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 100px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 60px;"></div>
+                                    </div>
+                                </div>
+                                <!-- September -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 185px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 65px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 120px;"></div>
+                                    </div>
+                                </div>
+                                <!-- October -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 165px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 80px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 85px;"></div>
+                                    </div>
+                                </div>
+                                <!-- November -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 180px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 90px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 90px;"></div>
+                                    </div>
+                                </div>
+                                <!-- December -->
+                                <div class="flex flex-col items-center">
+                                    <div class="flex flex-col w-16" style="height: 170px;">
+                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg" style="height: 85px;"></div>
+                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg"
+                                            style="height: 85px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Month labels below chart -->
+                            <div class="flex justify-between mt-4 text-sm text-gray-600 dark:text-white">
+                                <div>Jan</div>
+                                <div>Feb</div>
+                                <div>Mar</div>
+                                <div>Apr</div>
+                                <div>May</div>
+                                <div>Jun</div>
+                                <div>Jul</div>
+                                <div>Aug</div>
+                                <div>Sep</div>
+                                <div>Oct</div>
+                                <div>Nov</div>
+                                <div>Dec</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Bottom cards-->
+                <div class="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-12">
+                    <!--Employee Statistics-->
+                    <div class="lg:col-span-7 bg-white dark:bg-black pl-6">
+                        <div class="flex justify-between items-center mt-6 px-6">
+                            <div class="text-2xl font-semibold">
+                                Employee Status
+                            </div>
+                            <div class="flex items-center bg-gray-200 rounded-lg p-2 lg: mr-10 dark:bg-gray-700">
+                                <div class="text-blue-700 font-semibold text-sm mr-2">
+                                    Filter & Short
+                                </div>
+                                <svg class="w-5 dark:text-jobApplied" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <table class="w-full">
+                            <thead>
+                                <tr class="border-b border-gray-200 text-gray-500 dark:text-white">
+                                    <th class="text-left px-6 py-4">Employee Name</th>
+                                    <th class="text-left px-6 py-4">Department</th>
+                                    <th class="text-right px-6 py-4">Age</th>
+                                    <th class="text-right px-6 py-4">Discipline</th>
+                                    <th class="text-center px-6 py-4">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img src="public/Employee Image.png" alt="" class="h-8 w-8 rounded-full">
+                                            <span>John Doe</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Marketing</td>
+                                    <td class="px-6 py-4 text-right">22</td>
+                                    <td class="px-6 py-4 text-right"><span class="text-blue-700">+</span>100%</td>
+                                    <td class="px-6 py-4 flex justify-center"><img src="public/status/permanent.png"
+                                            alt="Permanent"></td>
+                                <tr class="">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img src="public/Employee Image.png" alt="" class="h-8 w-8 rounded-full">
+                                            <span>Lisa</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Finance</td>
+                                    <td class="px-6 py-4 text-right">24</td>
+                                    <td class="px-6 py-4 text-right"><span class="text-blue-700">+</span>95%</td>
+                                    <td class="px-6 py-4 flex justify-center"><img id="contractLogo" src="public/status/contract.png"
+                                            alt="Contract"></td>
+                                </tr>
+                                <tr class=""> 
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center space-x-3">
+                                            <img src="public/Employee Image.png" alt="" class="h-8 w-8 rounded-full">
+                                            <span>Henry</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">Engineering</td>
+                                    <td class="px-6 py-4 text-right">28</td>
+                                    <td class="px-6 py-4 text-right"><span class="text-blue-700">+</span>89%</td>
+                                    <td class="px-6 py-4 flex justify-center"><img src="public/status/permanent.png"
+                                            alt="Permanent"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--Employee Composition-->
+                    <div class="lg:col-span-5 bg-white dark:bg-black p-6 flex flex-col items-center justify-center">
+                        <div class="text-center text-2xl font-semibold mb-4">Employee Composition</div>
+                        <div><img src="public/Employee Composition Chart Container.png" alt="" class="mb-4"></div>
+                        <div class="text-center text-gray-500">856 employee total</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        // Simple dark mode toggle (no persistence)
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.querySelector('#darkModeToggle');
+            const html = document.documentElement;
+
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    html.classList.toggle('dark');
+                    // Toggle logo based on dark mode
+                    if (html.classList.contains('dark')) {
+                        logo.src = 'public/main-logo-dark.png';
+                        toggleLogo.src = 'public/sun.png';
+                        contractLogo.src = 'public/status/contract-dark.png'; // Change contract logo for dark mode
+                        notificationIcon.src = 'public/notification-dark.png'; // Change notification icon for dark mode
+                    } else {
+                        logo.src = 'public/main-logo.png';
+                        toggleLogo.src = 'public/moon.png';
+                        contractLogo.src = 'public/status/contract.png'; // Reset contract logo
+                        notificationIcon.src = 'public/notification.png'; // Reset notification icon
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
