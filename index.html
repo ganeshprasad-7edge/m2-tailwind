@@ -42,7 +42,7 @@
                     <h2 class="text-lg font-semibold mt-1">John Doe</h2>
                     <p class="text-gray-500 text-xs">Admin</p>
                 </div>
-                <svg class="w-6 bg-gray-200 rounded-lg ml-6 dark:text-white dark:bg-bgdark"
+                <svg class="w-6 bg-gray-200 rounded-lg ml-6 dark:text-white dark:bg-gray-700"
                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -205,17 +205,25 @@
                         <div class="flex-1 relative">
                             <!-- Horizontal dotted lines -->
                             <div class="absolute inset-0 h-64">
-                                <div class="absolute top-0 border-t border-dotted border-gray-300 dark:border-gray-700 w-full"></div>
-                                <div class="absolute border-t border-dotted border-gray-300 dark:border-gray-700 w-full" style="top: 25%;">
+                                <div
+                                    class="absolute top-0 border-t border-dotted border-gray-300 dark:border-gray-700 w-full">
                                 </div>
-                                <div class="absolute border-t border-dotted border-gray-300 dark:border-gray-700 w-full" style="top: 50%;">
+                                <div class="absolute border-t border-dotted border-gray-300 dark:border-gray-700 w-full"
+                                    style="top: 25%;">
                                 </div>
-                                <div class="absolute border-t border-dotted border-gray-300 dark:border-gray-700 w-full" style="top: 75%;">
+                                <div class="absolute border-t border-dotted border-gray-300 dark:border-gray-700 w-full"
+                                    style="top: 50%;">
                                 </div>
-                                <div class="absolute bottom-0 border-t border-dotted border-gray-300 dark:border-gray-700 w-full"></div>
+                                <div class="absolute border-t border-dotted border-gray-300 dark:border-gray-700 w-full"
+                                    style="top: 75%;">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 border-t border-dotted border-gray-300 dark:border-gray-700 w-full">
+                                </div>
                             </div>
                             <!-- Chart bars -->
-                            <div class="flex items-end justify-between h-64 border-b border-gray-300 dark:border-gray-700 relative z-10">
+                            <div
+                                class="flex items-end justify-between h-64 border-b border-gray-300 dark:border-gray-700 relative z-10">
                                 <!-- January -->
                                 <div class="flex flex-col items-center">
                                     <div class="flex flex-col w-[56px] h-40">
@@ -403,31 +411,7 @@
             </div>
         </main>
     </div>
-    <script>
-        // Simple dark mode toggle (no persistence)
-        document.addEventListener('DOMContentLoaded', () => {
-            const darkModeToggle = document.querySelector('#darkModeToggle');
-            const html = document.documentElement;
-
-            if (darkModeToggle) {
-                darkModeToggle.addEventListener('click', () => {
-                    html.classList.toggle('dark');
-                    // Toggle logo based on dark mode
-                    if (html.classList.contains('dark')) {
-                        logo.src = 'public/main-logo-dark.png';
-                        toggleLogo.src = 'public/sun.png';
-                        contractLogo.src = 'public/status/contract-dark.png'; // Change contract logo for dark mode
-                        notificationIcon.src = 'public/notification-dark.png'; // Change notification icon for dark mode
-                    } else {
-                        logo.src = 'public/main-logo.png';
-                        toggleLogo.src = 'public/moon.png';
-                        contractLogo.src = 'public/status/contract.png'; // Reset contract logo
-                        notificationIcon.src = 'public/notification.png'; // Reset notification icon
-                    }
-                });
-            }
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 
 </html>
