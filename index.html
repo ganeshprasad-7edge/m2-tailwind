@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M-2</title>
     <link rel="stylesheet" href="src/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <!-- Main body with dark mode support -->
@@ -187,167 +188,29 @@
                 </div>
 
                 <!-- Job Statistics chart section -->
-                <div class="bg-white dark:bg-black">
-                    <!-- Chart header with legend -->
-                    <div class="flex justify-between items-start mt-6 pt-6 px-6">
-                        <!-- Chart title and controls -->
-                        <h2 class="text-2xl font-semibold">Job Statistics</h2>
-                        <div class="flex items-center space-x-4">
-                            <div class="flex items-center">
-                                <div class="bg-jobView dark:bg-jobViewDark rounded-md w-4 h-4 mr-2"></div>
-                                <div>Job View</div>
+                <div class="bg-white dark:bg-black shadow-sm pt-6 px-6 mb-6 mt-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white">Job Statistics</h3>
+                        <div class="flex items-center space-x-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 bg-jobView dark:bg-jobViewDark rounded-sm"></div>
+                                    <span class="text-sm text-black dark:text-white">Job View</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 bg-jobApplied rounded-sm"></div>
+                                    <span class="text-sm text-black dark:text-white">Job Applied</span>
+                                </div>
                             </div>
-                            <div class="flex items-center">
-                                <div class="bg-jobApplied rounded-md w-4 h-4 mr-2"></div>
-                                <div>Job Applied</div>
-                            </div>
-                            <div class="flex items-center bg-gray-200 dark:bg-gray-700 text-sm rounded-md px-2 py-1">
-                                <div class="text-jobApplied font-semibold">This Month</div>
-                                <svg class="w-4 ml-1 dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </div>
+                            <select
+                                class="border border-gray-300 dark:border-gray-600 rounded-md px-3 py-1 text-sm bg-gray-200 dark:bg-gray-700 text-jobApplied">
+                                <option>This Month</option>
+                                <option>Last Month</option>
+                            </select>
                         </div>
                     </div>
-
-                    <!-- Chart visualization -->
-                    <div class="flex p-6">
-                        <!-- Y-axis numbers -->
-                        <div class="flex flex-col justify-between h-64 pr-4 text-sm text-gray-500 dark:text-white">
-                            <div>100</div>
-                            <div>80</div>
-                            <div>60</div>
-                            <div>40</div>
-                            <div>20</div>
-                        </div>
-                        <!-- Chart area -->
-                        <div class="flex-1 relative">
-                            <!-- Horizontal dotted lines -->
-                            <div class="absolute inset-0 h-64">
-                                <div
-                                    class="absolute top-0 border-t border-dotted border-gray-300 dark:border-gray-700 w-full">
-                                </div>
-                                <div class="absolute border-t border-dotted border-gray-300 dark:border-gray-700 w-full"
-                                    style="top: 25%;">
-                                </div>
-                                <div class="absolute border-t border-dotted border-gray-300 dark:border-gray-700 w-full"
-                                    style="top: 50%;">
-                                </div>
-                                <div class="absolute border-t border-dotted border-gray-300 dark:border-gray-700 w-full"
-                                    style="top: 75%;">
-                                </div>
-                                <div
-                                    class="absolute bottom-0 border-t border-dotted border-gray-300 dark:border-gray-700 w-full">
-                                </div>
-                            </div>
-                            <!-- Chart bars -->
-                            <div
-                                class="flex items-end justify-between h-64 border-b border-gray-300 dark:border-gray-700 relative z-10">
-                                <!-- January -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-40">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full h-10 rounded-lg"></div>
-                                        <div class="bg-jobApplied w-full h-full rounded-t-none rounded-b-lg"></div>
-                                    </div>
-                                </div>
-                                <!-- February -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[140px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[60px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[80px]"></div>
-                                    </div>
-                                </div>
-                                <!-- March -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[150px]" style="height: 150px;">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[50px]"
-                                            style="height: 50px;"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[100px]"
-                                            style="height: 100px;"></div>
-                                    </div>
-                                </div>
-                                <!-- April -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[180px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[70px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[110px]"></div>
-                                    </div>
-                                </div>
-                                <!-- May -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[170px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[85px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[85px]"></div>
-                                    </div>
-                                </div>
-                                <!-- June -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[190px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[95px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[95px]"></div>
-                                    </div>
-                                </div>
-                                <!-- July -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[175px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[75px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[100px]"></div>
-                                    </div>
-                                </div>
-                                <!-- August -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[160px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[100px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[60px]"></div>
-                                    </div>
-                                </div>
-                                <!-- September -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[185px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[65px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[120px]"></div>
-                                    </div>
-                                </div>
-                                <!-- October -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[165px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[80px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[85px]"></div>
-                                    </div>
-                                </div>
-                                <!-- November -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[180px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[90px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[90px]"></div>
-                                    </div>
-                                </div>
-                                <!-- December -->
-                                <div class="flex flex-col items-center">
-                                    <div class="flex flex-col w-[56px] h-[170px]">
-                                        <div class="bg-jobView dark:bg-jobViewDark w-full rounded-lg h-[85px]"></div>
-                                        <div class="bg-jobApplied w-full rounded-t-none rounded-b-lg h-[85px]"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Month labels below chart -->
-                            <div class="flex justify-between mt-4 text-sm text-gray-600 dark:text-white">
-                                <div>Jan</div>
-                                <div>Feb</div>
-                                <div>Mar</div>
-                                <div>Apr</div>
-                                <div>May</div>
-                                <div>Jun</div>
-                                <div>Jul</div>
-                                <div>Aug</div>
-                                <div>Sep</div>
-                                <div>Oct</div>
-                                <div>Nov</div>
-                                <div>Dec</div>
-                            </div>
-                        </div>
+                    <div class="h-64">
+                        <canvas id="jobChart" class="w-full h-full"></canvas>
                     </div>
                 </div>
 
@@ -436,7 +299,121 @@
             </div>
         </main>
     </div>
-    <script src="index.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const darkModeToggle = document.querySelector('#darkModeToggle');
+            const html = document.documentElement;
+
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    html.classList.toggle('dark');
+                    // Toggle logo based on dark mode
+                    if (html.classList.contains('dark')) {
+                        logo.src = 'public/main-logo-dark.png';
+                        toggleLogo.src = 'public/sun.png';
+                        contractLogo.src = 'public/status/contract-dark.png'; // Change contract logo for dark mode
+                        notificationIcon.src = 'public/notification-dark.png'; // Change notification icon for dark mode
+                        updateChartsForTheme(true);
+                    } else {
+                        logo.src = 'public/main-logo.png';
+                        toggleLogo.src = 'public/moon.png';
+                        contractLogo.src = 'public/status/contract.png'; // Reset contract logo
+                        notificationIcon.src = 'public/notification.png'; // Reset notification icon
+                        updateChartsForTheme(false);
+                    }
+                });
+            }
+        });
+        function updateChartsForTheme(isDark) {
+            if (window.jobChart) {
+                window.jobChart.options.scales.y.grid.color = isDark ? '#374151' : '#f3f4f6';
+                window.jobChart.options.scales.x.ticks.color = isDark ? '#9CA3AF' : '#6B7280';
+                window.jobChart.options.scales.y.ticks.color = isDark ? '#9CA3AF' : '#6B7280';
+
+                // ✅ Update Job View dataset background color
+                window.jobChart.data.datasets[1].backgroundColor = isDark ? '#2D2D2D' : '#F2EFFF';
+
+                window.jobChart.update();
+            }
+        }
+
+        // Job Statistics Chart (Dual dataset: Job View + Job Applied)
+        const ctx = document.getElementById('jobChart').getContext('2d');
+        const isDarkMode = document.documentElement.classList.contains('dark');
+
+        window.jobChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [
+                    {
+                        label: 'Job Applied',
+                        backgroundColor: '#5832E6', // Dark Purple
+                        borderRadius: 6,
+                        data: [400, 420, 390, 480, 500, 550, 530, 510, 600, 580, 610, 640],
+                    },
+                    {
+                        label: 'Job View',
+                        backgroundColor: isDarkMode ? '#2D2D2D' : '#F2EFFF', // Light Purple
+                        borderRadius: 6,
+                        data: [1200, 1100, 1300, 1250, 1400, 1350, 1500, 1470, 1550, 1600, 1620, 1700],
+                    },
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false,
+                        labels: {
+                            color: isDarkMode ? '#D1D5DB' : '#374151'
+                        }
+                    },
+                },
+                scales: {
+                    x: {
+                        stacked: true,
+                        grid: { display: false },
+                        ticks: {
+                            color: isDarkMode ? '#9CA3AF' : '#6B7280'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        stacked: true,
+                        ticks: {
+                            stepSize: 500,
+                            color: isDarkMode ? '#9CA3AF' : '#6B7280'
+                        },
+                        grid: {
+                            color: isDarkMode ? '#374151' : '#f3f4f6'
+                        }
+                    }
+                }
+            }
+        });
+
+        const jobChartSelect = document.querySelector('select');
+        const jobChartData = {
+            'This Month': {
+                applied: [400, 420, 390, 480, 500, 550, 530, 510, 600, 580, 610, 640],
+                view: [1200, 1100, 1300, 1250, 1400, 1350, 1500, 1470, 1550, 1600, 1620, 1700]
+            },
+            'Last Month': {
+                applied: [1000, 410, 370, 460, 480, 1120, 500, 490, 580, 570, 590, 850],
+                view: [1000, 1050, 1250, 1200, 1350, 1300, 1450, 1420, 1500, 1550, 1570, 1650]
+            }
+        };
+        jobChartSelect.addEventListener('change', function (e) {
+            const value = e.target.value;
+            window.jobChart.data.datasets[0].data = jobChartData[value].applied;
+            window.jobChart.data.datasets[1].data = jobChartData[value].view;
+            window.jobChart.update();
+        });
+
+    </script>
 </body>
 
 </html>
