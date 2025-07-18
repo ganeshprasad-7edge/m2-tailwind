@@ -23,8 +23,9 @@
         <div class="relative flex items-center flex-1 mx-2 md:mx-4">
             <input type="text" placeholder="Search..."
                 class="w-full md:w-7/12 pl-8 pr-4 py-2 bg-searchbar border-0 rounded-lg focus:outline-none placeholder-searchbarText text-black dark:bg-gray-600 dark:text-white dark:placeholder-white text-sm md:text-base">
-            <svg class="absolute left-3 w-4 h-4 md:w-5 md:h-8 text-gray-500 dark:text-white" xmlns="http://www.w3.org/2000/svg"
-                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <svg class="absolute left-3 w-4 h-4 md:w-5 md:h-8 text-gray-500 dark:text-white"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
@@ -32,20 +33,32 @@
         <!-- Dark mode toggle and notifications -->
         <div class="flex items-center space-x-2 md:space-x-4 lg:space-x-8">
             <div id="darkModeToggle" class="cursor-pointer hover:bg-gray-200 p-1 md:p-2 rounded-lg transition-colors">
-                <img id="toggleLogo" class="bg-gray-100 dark:bg-gray-700 rounded-lg w-6 h-6 md:w-8 md:h-8" src="public/moon.png"
-                    alt="Toggle Dark Mode">
+                <img id="toggleLogo" class="bg-gray-100 dark:bg-gray-700 rounded-lg w-6 h-6 md:w-8 md:h-8"
+                    src="public/moon.png" alt="Toggle Dark Mode">
             </div>
             <div>
                 <img id="notificationIcon" src="public/notification.png" alt="Notification"
-                    class="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 dark:text-white">
+                    class="w-8 h-8 md:w-8 md:h-8 lg:w-10 lg:h-10 dark:text-white">
             </div>
+        </div>
+        <!-- Inside <header> -->
+        <div class="md:hidden">
+            <button id="sidebarToggle" class="p-2">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
     </header>
 
     <!-- Main content wrapper -->
     <div class="flex flex-col md:flex-row">
         <!-- Sidebar navigation with user profile and menu items -->
-        <nav class="w-full md:w-56 lg:w-64 p-2 md:p-4 min-h-screen rounded-lg md:block hidden">
+        <!-- <nav class="w-full md:w-56 lg:w-64 p-2 md:p-4 min-h-screen rounded-lg md:block hidden"> -->
+        <nav id="mobileSidebar"
+            class="fixed top-14 left-0 z-40 w-64 h-full overflow-y-auto transform -translate-x-full transition-transform duration-300 bg-white dark:bg-gray-900 shadow-md md:translate-x-0 md:static md:shadow-none">
+
             <!-- User profile section -->
             <div class="flex items-center mb-6">
                 <img class="rounded-full" src="public/Employee Image.png" alt="">
@@ -146,6 +159,8 @@
                 </li>
             </ul>
         </nav>
+        <!-- Overlay -->
+        <div id="sidebarOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden md:hidden"></div>
 
         <!-- Main content area -->
         <main class="flex-1 p-2 md:p-4 bg-gray-100 dark:bg-gray-600">
@@ -156,7 +171,8 @@
                     <div class="bg-white dark:bg-black p-4 md:pt-4 md:pl-6 md:pb-4 rounded-lg">
                         <div class="flex items-center justify-between md:block">
                             <h3 class="text-sm md:text-base font-medium">Total Employees</h3>
-                            <img class="w-6 h-6 md:w-auto md:h-auto md:ml-2" src="public/Total Employees Card Trend.png" alt="">
+                            <img class="w-6 h-6 md:w-auto md:h-auto md:ml-2" src="public/Total Employees Card Trend.png"
+                                alt="">
                         </div>
                         <h5 class="text-2xl md:text-4xl pt-2 pb-2 font-bold">856</h5>
                         <p class="text-xs md:text-sm text-gray-500">Employee</p>
@@ -164,7 +180,8 @@
                     <div class="bg-white dark:bg-black p-4 md:pt-4 md:pl-6 md:pb-4 rounded-lg">
                         <div class="flex items-center justify-between md:block">
                             <h3 class="text-sm md:text-base font-medium">Job View</h3>
-                            <img class="w-6 h-6 md:w-auto md:h-auto md:ml-2" src="public/Job View Card Trend.png" alt="">
+                            <img class="w-6 h-6 md:w-auto md:h-auto md:ml-2" src="public/Job View Card Trend.png"
+                                alt="">
                         </div>
                         <h5 class="text-2xl md:text-4xl pt-2 pb-2 font-bold">3,342</h5>
                         <p class="text-xs md:text-sm text-gray-500">Viewers</p>
@@ -172,7 +189,8 @@
                     <div class="bg-white dark:bg-black p-4 md:pt-4 md:pl-6 md:pb-4 rounded-lg">
                         <div class="flex items-center justify-between md:block">
                             <h3 class="text-sm md:text-base font-medium">Job Applied</h3>
-                            <img class="w-6 h-6 md:w-auto md:h-auto md:ml-2" src="public/Job Applied Card Trend.png" alt="">
+                            <img class="w-6 h-6 md:w-auto md:h-auto md:ml-2" src="public/Job Applied Card Trend.png"
+                                alt="">
                         </div>
                         <h5 class="text-2xl md:text-4xl pt-2 pb-2 font-bold">77</h5>
                         <p class="text-xs md:text-sm text-gray-500">Applicants</p>
@@ -180,7 +198,8 @@
                     <div class="bg-white dark:bg-black p-4 md:pt-4 md:pl-6 md:pb-4 rounded-lg">
                         <div class="flex items-center justify-between md:block">
                             <h3 class="text-sm md:text-base font-medium">Resigned Employees</h3>
-                            <img class="w-6 h-6 md:w-auto md:h-auto md:ml-2" src="public/Resigned Employees Card Trend.png" alt="">
+                            <img class="w-6 h-6 md:w-auto md:h-auto md:ml-2"
+                                src="public/Resigned Employees Card Trend.png" alt="">
                         </div>
                         <h5 class="text-2xl md:text-4xl pt-2 pb-2 font-bold">17</h5>
                         <p class="text-xs md:text-sm text-gray-500">Employee</p>
@@ -189,9 +208,11 @@
 
                 <!-- Job Statistics chart section -->
                 <div class="bg-white dark:bg-black shadow-sm p-4 md:pt-6 md:px-6 mb-6 mt-4 md:mt-6 rounded-lg">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 md:mb-6 space-y-4 md:space-y-0">
+                    <div
+                        class="flex flex-col md:flex-row md:items-center justify-between mb-4 md:mb-6 space-y-4 md:space-y-0">
                         <h3 class="text-lg md:text-2xl font-semibold text-gray-900 dark:text-white">Job Statistics</h3>
-                        <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 md:space-x-6">
+                        <div
+                            class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 md:space-x-6">
                             <div class="flex items-center space-x-2 md:space-x-4">
                                 <div class="flex items-center space-x-2">
                                     <div class="w-3 h-3 bg-jobView dark:bg-jobViewDark rounded-sm"></div>
@@ -219,7 +240,8 @@
                     <!-- Employee Statistics table -->
                     <div class="lg:col-span-7 bg-white dark:bg-black p-4 md:pl-6 rounded-lg">
                         <!-- Table header and content -->
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-2 md:mt-6 px-2 md:px-6 space-y-2 sm:space-y-0">
+                        <div
+                            class="flex flex-col sm:flex-row justify-between items-start sm:items-center mt-2 md:mt-6 px-2 md:px-6 space-y-2 sm:space-y-0">
                             <div class="text-lg md:text-2xl font-semibold">
                                 Employee Status
                             </div>
@@ -227,8 +249,8 @@
                                 <div class="text-blue-700 font-semibold text-xs md:text-sm mr-2">
                                     Filter & Short
                                 </div>
-                                <svg class="w-4 md:w-5 dark:text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <svg class="w-4 md:w-5 dark:text-purple-600" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round"
                                         d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
                                 </svg>
@@ -239,10 +261,16 @@
                             <table class="w-full min-w-full">
                                 <thead>
                                     <tr class="border-b border-gray-200 text-gray-500 dark:text-white">
-                                        <th class="text-left px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm">Employee Name</th>
-                                        <th class="text-left px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm md:table-cell">Department</th>
-                                        <th class="text-right px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm md:table-cell">Age</th>
-                                        <th class="text-right px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm">Discipline</th>
+                                        <th class="text-left px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm">Employee Name
+                                        </th>
+                                        <th
+                                            class="text-left px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm md:table-cell">
+                                            Department</th>
+                                        <th
+                                            class="text-right px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm md:table-cell">
+                                            Age</th>
+                                        <th class="text-right px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm">Discipline
+                                        </th>
                                         <th class="text-center px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm">Status</th>
                                     </tr>
                                 </thead>
@@ -250,41 +278,59 @@
                                     <tr>
                                         <td class="px-2 md:px-6 py-2 md:py-4">
                                             <div class="flex items-center space-x-2 md:space-x-3">
-                                                <img src="public/Employee Image.png" alt="" class="h-6 w-6 md:h-8 md:w-8 rounded-full">
+                                                <img src="public/Employee Image.png" alt=""
+                                                    class="h-6 w-6 md:h-8 md:w-8 rounded-full">
                                                 <span class="text-xs md:text-sm">John Doe</span>
                                             </div>
                                         </td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm md:table-cell">Marketing</td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm md:table-cell">22</td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm"><span class="text-green-500">+</span>100%</td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 flex justify-center"><img src="public/status/permanent.png"
-                                                alt="Permanent" class="w-4 h-4 md:w-6 md:h-6"></td>
+                                        <td class="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm md:table-cell">Marketing
+                                        </td>
+                                        <td
+                                            class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm md:table-cell">
+                                            22</td>
+                                        <td class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm"><span
+                                                class="text-green-500">+</span>100%</td>
+                                        <td class="px-2 md:px-6 py-2 md:py-4 flex justify-center"><img
+                                                src="public/status/permanent.png" alt="Permanent"
+                                                class="w-4 h-4 md:w-6 md:h-6"></td>
                                     </tr>
                                     <tr>
                                         <td class="px-2 md:px-6 py-2 md:py-4">
                                             <div class="flex items-center space-x-2 md:space-x-3">
-                                                <img src="public/Employee Image.png" alt="" class="h-6 w-6 md:h-8 md:w-8 rounded-full">
+                                                <img src="public/Employee Image.png" alt=""
+                                                    class="h-6 w-6 md:h-8 md:w-8 rounded-full">
                                                 <span class="text-xs md:text-sm">Lisa</span>
                                             </div>
                                         </td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm sm:table-cell">Finance</td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm md:table-cell">24</td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm"><span class="text-green-500">+</span>95%</td>
+                                        <td class="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm sm:table-cell">Finance
+                                        </td>
+                                        <td
+                                            class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm md:table-cell">
+                                            24</td>
+                                        <td class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm"><span
+                                                class="text-green-500">+</span>95%</td>
                                         <td class="px-2 md:px-6 py-2 md:py-4 flex justify-center"><img id="contractLogo"
-                                                src="public/status/contract.png" alt="Contract" class="w-4 h-4 md:w-6 md:h-6"></td>
+                                                src="public/status/contract.png" alt="Contract"
+                                                class="w-4 h-4 md:w-6 md:h-6"></td>
                                     </tr>
                                     <tr>
                                         <td class="px-2 md:px-6 py-2 md:py-4">
                                             <div class="flex items-center space-x-2 md:space-x-3">
-                                                <img src="public/Employee Image.png" alt="" class="h-6 w-6 md:h-8 md:w-8 rounded-full">
+                                                <img src="public/Employee Image.png" alt=""
+                                                    class="h-6 w-6 md:h-8 md:w-8 rounded-full">
                                                 <span class="text-xs md:text-sm">Henry</span>
                                             </div>
                                         </td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm sm:table-cell">Engineering</td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm md:table-cell">28</td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm"><span class="text-green-500">+</span>89%</td>
-                                        <td class="px-2 md:px-6 py-2 md:py-4 flex justify-center"><img src="public/status/permanent.png"
-                                                alt="Permanent" class="w-4 h-4 md:w-6 md:h-6"></td>
+                                        <td class="px-2 md:px-6 py-2 md:py-4 text-xs md:text-sm sm:table-cell">
+                                            Engineering</td>
+                                        <td
+                                            class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm md:table-cell">
+                                            28</td>
+                                        <td class="px-2 md:px-6 py-2 md:py-4 text-right text-xs md:text-sm"><span
+                                                class="text-green-500">+</span>89%</td>
+                                        <td class="px-2 md:px-6 py-2 md:py-4 flex justify-center"><img
+                                                src="public/status/permanent.png" alt="Permanent"
+                                                class="w-4 h-4 md:w-6 md:h-6"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -292,10 +338,12 @@
                     </div>
 
                     <!-- Employee Composition chart -->
-                    <div class="lg:col-span-5 bg-white dark:bg-black p-4 md:p-6 flex flex-col items-center justify-center rounded-lg">
+                    <div
+                        class="lg:col-span-5 bg-white dark:bg-black p-4 md:p-6 flex flex-col items-center justify-center rounded-lg">
                         <!-- Composition chart content -->
                         <div class="text-center text-lg md:text-2xl font-semibold mb-4">Employee Composition</div>
-                        <div><img src="public/Employee Composition Chart Container.png" alt="" class="mb-4 w-full max-w-xs md:max-w-none"></div>
+                        <div><img src="public/Employee Composition Chart Container.png" alt=""
+                                class="mb-4 w-full max-w-xs md:max-w-none"></div>
                         <div class="text-center text-sm md:text-base text-gray-500">856 employee total</div>
                     </div>
                 </div>
@@ -303,7 +351,40 @@
         </main>
     </div>
 
+    <!-- Sidebar overlay -->
+    <!-- <div id="sidebarOverlay" class="fixed inset-0 z-30 md:hidden"></div> -->
+    <!-- This will just detect clicks, it's not visible -->
+    <div id="sidebarBackdrop" class="fixed inset-0 z-40 hidden md:hidden"></div>
+
+
     <script>
+        const sidebar = document.getElementById('mobileSidebar');
+        const toggleBtn = document.getElementById('sidebarToggle');
+        const backdrop = document.getElementById('sidebarBackdrop');
+
+        toggleBtn.addEventListener('click', () => {
+            const isOpen = !sidebar.classList.contains('-translate-x-full');
+
+            if (isOpen) {
+                // Close sidebar
+                sidebar.classList.add('-translate-x-full');
+                backdrop.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            } else {
+                // Open sidebar
+                sidebar.classList.remove('-translate-x-full');
+                backdrop.classList.remove('hidden');
+                sidebar.classList.add('overflow-y-auto')
+                // document.body.classList.add('overflow-hidden');
+            }
+        });
+
+        // Close when clicking outside
+        backdrop.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+            backdrop.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        });
         document.addEventListener('DOMContentLoaded', () => {
             const darkModeToggle = document.querySelector('#darkModeToggle');
             const html = document.documentElement;
